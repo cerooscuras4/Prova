@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/lancamento")
+@RequestMapping("/lancamentos")
 public class LancamentoController {
 
 
@@ -21,7 +21,17 @@ public class LancamentoController {
 
 
 
-    @PostMapping("/cadastrar")
+    public Double calculaTotalLancamento() {
+        Double total=0.0;
+        for(Lancamento l : lista) {
+            total += l.getValorLancado();
+        }
+        return total;
+
+    }
+
+
+    @PostMapping
     public void cadastrarLista(@RequestBody Lancamento novoLancamento) {
         lista.add(novoLancamento);
     }
@@ -29,12 +39,12 @@ public class LancamentoController {
 
 
 
-    @GetMapping("/listar")
+    @GetMapping
         public ArrayList<Lancamento> getLancamento() {return (ArrayList<Lancamento>) lista;}
 
 
 
-   @DeleteMapping("/excluir/{id}")
+   @DeleteMapping("/{id}")
     public void excluirCachorro(@PathVariable int id) {
         lista.remove(id-1);
 
