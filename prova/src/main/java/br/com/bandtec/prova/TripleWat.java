@@ -2,20 +2,17 @@ package br.com.bandtec.prova;
 
 import java.util.List;
 
-public class TripleWat extends GameStoreController {
+public class TripleWat extends GameStore {
 
 
     private String empresa;
 
-
-
-    public TripleWat(String nome, Double preco, String tipo, List<Lancamento> lancamentos, String empresa) {
-        super(nome, preco, tipo, lancamentos);
+    public TripleWat(String descricao, Double preco, String tipo, String empresa) {
+        super(descricao, preco, tipo);
         this.empresa = empresa;
-
     }
 
-        @Override
+    @Override
         public String toString() {
             return "TripleWat{" +
                     "estudio='" + empresa + '\'' +

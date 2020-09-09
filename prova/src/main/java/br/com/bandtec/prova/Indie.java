@@ -2,13 +2,13 @@ package br.com.bandtec.prova;
 
 import java.util.List;
 
-public class Indie extends GameStoreController{
+public class Indie extends GameStore{
 
 
 private String estudio;
 
-    public Indie(String nome, Double preco, String tipo, List<Lancamento> lancamentos, String estudio) {
-        super(nome, preco, tipo, lancamentos);
+    public Indie(String descricao, Double preco, String tipo, String estudio) {
+        super(descricao, preco, tipo);
         this.estudio = estudio;
     }
 
@@ -24,5 +24,9 @@ private String estudio;
                 "estudio='" + estudio + '\'' +
                 ", taxa=" + String.format("R$ %.2f",getValorLancado())+
                 "} " + super.toString();
+    }
+
+    public String getEstudio() {
+        return estudio;
     }
 }
