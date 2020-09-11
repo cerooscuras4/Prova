@@ -45,6 +45,10 @@ public class LancamentoController {
     }
 
 
+    @DeleteMapping("/{id}")
+    public void excluirUmaLista(@PathVariable int id) {
+        lista.remove(id-1);
+    }
 
 
     /// cadastrar Triplewat

@@ -9,6 +9,7 @@ private String descricao;
 private Double preco;
 private String tipo;
 
+
     public GameStore(String descricao, Double preco, String tipo) {
         this.descricao = descricao;
         this.preco = preco;
